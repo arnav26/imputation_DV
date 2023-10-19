@@ -2,14 +2,7 @@ CONFORM_GT = "/cluster/work/pausch/arnav/imputation/suisag_all_target/conform-gt
 BEAGLE = "/cluster/work/pausch/arnav/imputation/suisag_all_target/beagle.18Apr22.4de.jar"
 
 rule all:
-    input: expand("/cluster/work/pausch/arnav/imputation/reference_dv_set/{chr}_filtered.vcf.gz.csi",chr = range(1,18)),
-        expand("/cluster/work/pausch/arnav/imputation/reference_dv_set/{chr}_filtered_AN_AC_tags.vcf.gz.csi",chr = range(1,18)),
-        expand("/cluster/work/pausch/arnav/imputation/reference_dv_set/{chr}_phased.bcf",chr = range(1,18)),
-        expand("/cluster/work/pausch/arnav/imputation/reference_dv_set/{chr}_phased.vcf.gz.csi",chr = range(1,18)),
-        expand("/cluster/work/pausch/arnav/imputation/suisag_all_target/dup_suppress_first/{chr}_Suisag_all_dup_suppress_first_conformed.vcf.gz.csi",chr = range(1,18)),
-        expand("/cluster/work/pausch/arnav/imputation/suisag_all_target/dup_suppress_first/{chr}_Suisag_all_dup_suppress_first_conformed_phased.vcf.gz.csi",chr = range(1,18)),
-        expand("/cluster/work/pausch/arnav/imputation/suisag_all_imputed/dups_suppressed/{chr}_Suisag_all_dup_suppress_imputed.vcf.gz.csi",chr = range(1,18)),
-        expand("/cluster/work/pausch/arnav/imputation/suisag_all_imputed/dups_suppressed/{chr}_Suisag_all_imputed_merged_ref.vcf.gz.csi",chr = range(1,18))
+    input: expand("/cluster/work/pausch/arnav/imputation/suisag_all_imputed/dups_suppressed/{chr}_Suisag_all_imputed_merged_ref.vcf.gz.csi",chr = range(1,18))
 
 # Section 1: Prepare REF
 rule filter_vcf_ref:
